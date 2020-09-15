@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" id="top">
+    <div class="container">
+        {% if session.logged_in %}
+        <a class="navbar-brand" href="#">{{session.username}}</a>
+        {% else %}
+        <a class="navbar-brand" id="po_int" href="#">Your favorite book collection...</a>
+        {% endif %}
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <div class="bd-example">
+                {% if session.logged_in %}
+                <a class="btn btn-outline-warning" href="/logout" role="button">Sign Out</a>
+                {% else %}
+                <button type="button" class="btn btn-outline-warning mr-2" data-toggle="modal" data-target="#SignInModal"
+                    data-whatever="@mdo">Sign In</button>
+                <button type="button" class="btn btn-outline-info" data-toggle="modal"
+                    data-target="#SignUpModal" data-whatever="@mdo">Sign Up</button>    
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

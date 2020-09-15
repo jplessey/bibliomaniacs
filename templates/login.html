@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<header class="masthead" id="top">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <!-- <h1 class="text-uppercase text-white font-weight-bold">my_Books</h1> -->
+                <h1 class="text-white">bibliomaniacs</h1>
+            </div>
+        </div>
+    </div>
+    <hr class="divider xl-8">
+    <div class="align-items-center justify-content-center text-center">
+        <!-- <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-warning btn-lg mr-2" data-toggle="modal"
+                data-target="#SignUpModal" data-whatever="@mdo">Sign Up</button>
+        </div> -->
+    </div>
+</header>
+
+<section id="about" style="background-image: url('static/images/libros_400.jpg'); height: 70%;">
+    <div class="container">
+        <div class="container">
+            <br>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show justify-content-center text-center"
+                role="alert">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button></div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+
+        <br>
+
+        <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="SignInModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ url_for('signin_post') }}" method="post">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Username:</label>
+                                <input type="text" name="username" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Password:</label>
+                                <input type="password" name="password" class="form-control" id="recipient-name"
+                                    autocomplete="off">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-outline-success">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="SignUpModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="SignUpModalLabel">Sign Up to start your book collection!</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ url_for('signup_post') }}" method="post">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Username:</label>
+                                <input type="text" name="username" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Password:</label>
+                                <input type="password" name="password" class="form-control" id="recipient-name"
+                                    autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Confirm Password:</label>
+                                <input type="password" name="confirm_password" class="form-control" id="recipient-name"
+                                    autocomplete="off">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-outline-success">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
