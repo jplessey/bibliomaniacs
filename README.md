@@ -11,7 +11,7 @@ All C.R.U.D. operations can be done to create and manage your own book collectio
 
 You can try bibliomaniacs here: https://biblio-maniacs.herokuapp.com/
 
-## Main technologies used:
+#### Main technologies used:
 * Flask
 * SQLAlchemy
 * Jinja2
