@@ -10,3 +10,11 @@ It is based on a previous project called <a href="https://github.com/jplessey/my
 All C.R.U.D. operations can be done to create and manage your own book collection.
 
 You can try bibliomaniacs here: https://biblio-maniacs.herokuapp.com/
+
+## Main technologies used:
+* Flask
+* SQLAlchemy
+* Jinja2
+* Bootstrap4
+
+python_version = 3.8
